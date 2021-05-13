@@ -15,24 +15,13 @@ canvas.height = window.innerHeight;
 // c.fillStyle = "#f2bac9ff"; //--cameo-pink
 // c.fillStyle = "#f2e2baff"; //--dutch-white
 
-// // Arc and Circle
-// c.beginPath();
-// c.arc(300, 300, 30, 0, Math.PI *2, false);
-// c.strokeStyle = "#baf2e9ff";
-// c.fillStyle = "#f2e2baff";
-// c.stroke();
+let colors = ['#b0f2b4ff', '#baf2e9ff', '#bad7f2ff', '#f2bac9ff', '#f2e2baff'];
 
-/*
-To do:
-- Randomize number of circles
-- Randomize colors of circles from the list of my color scheme
-- Randomize shape of circles
-*/
-for (var i =0; i < (Math.random()*100000-1+1); i++) {
+for (var i =0; i < Math.random()*10000+1; i++) {
     var x = Math.random() * window.innerWidth; // return a random value between 0 and full inner width of screen
     var y = Math.random() * window.innerHeight; // return a random value between 0 and full inner height of screen 
     c.beginPath();
-    c.arc(x, y, 30, 0, Math.PI *2, false);
-    c.strokeStyle = "#bad7f2ff";
+    c.arc(x, y, Math.random()*100+1, 0, Math.PI *2, false);
+    c.strokeStyle = colors[Math.floor(Math.random()*4)];
     c.stroke(); 
 }
